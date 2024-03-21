@@ -1,4 +1,5 @@
 import model.PersonList;
+import model.Student;
 
 import java.io.File;
 
@@ -9,8 +10,10 @@ public class Main {
 
         PersonList personList1 = new PersonList();
         personList1.loadFromFile(FILE_NAME);
-
+        personList1.add(new Student("Petya", 25, 5));
         personList1.show();
+        personList1.saveToFile(FILE_NAME);
+
 
     }
 }

@@ -28,6 +28,10 @@ public class Person {
         this.age = age;
     }
 
+    public String toFileLine() {
+        return (getClass().getSimpleName() + " " + name + " " + age);
+    }
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("model.Person{");

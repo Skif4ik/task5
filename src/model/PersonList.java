@@ -1,7 +1,6 @@
 package model;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.*;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -23,6 +22,18 @@ public class PersonList {
         System.out.println("people list: ");
         for (int i = 0; i < index; i++) {
             System.out.println(people[i]);
+        }
+    }
+
+    public void saveToFile(String fileName){
+        try(PrintWriter pw = new PrintWriter(new FileWriter(fileName))){
+
+            for (int i = 0; i < index; i++) {
+                pw.println(people[i].toFileLine());
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

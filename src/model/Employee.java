@@ -20,6 +20,11 @@ public class Employee extends Person {
     }
 
     @Override
+    public String toFileLine() {
+        return super.toFileLine() + " " + salary;
+    }
+
+    @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("model.Employee{");
         sb.append("salary=").append(salary);

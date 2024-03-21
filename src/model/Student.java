@@ -1,6 +1,6 @@
 package model;
 
-public class Student extends Person{
+public class Student extends Person {
     private double avg;
 
     public Student() {
@@ -17,6 +17,11 @@ public class Student extends Person{
 
     public void setAvg(double avg) {
         this.avg = avg;
+    }
+
+    @Override
+    public String toFileLine() {
+        return super.toFileLine() + " " + avg;
     }
 
     @Override
